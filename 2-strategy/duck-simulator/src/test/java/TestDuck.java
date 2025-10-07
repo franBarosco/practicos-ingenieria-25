@@ -24,4 +24,19 @@ public class TestDuck {
         model.performFly();
     }
 
+    @Test
+    public void testDomesticDuck() {
+        Duck domestic = new DomesticDuck();
+        domestic.performFly();
+        domestic.performQuack();
+    }
+
+    @Test
+    public void testMallardDuckChangeQuackBehavior() {
+        Duck mallard = new MallardDuck();
+        mallard.performQuack();
+        mallard.setQuackBehavior(new QuackLouder());
+        mallard.performQuack();
+    }
+
 }
